@@ -2,6 +2,7 @@ var express = require('express');
 var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
 var cors = require('cors');
+var path = require('path');
 
 var app = express();
 
@@ -43,6 +44,13 @@ app.delete('/products/:id', (req, res) => {
         res.send(product);
     }, error => res.status(400).send(error));
 });
+
+if (process.env.NODE_ENV === 'production') {
+    app.use(express.static('client/build'))
+    app.get('*', (req, res) => {
+        res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'))
+    })
+}
 
 app.listen(process.env.PORT || 5000, () => {
     console.log('The server is running...');
