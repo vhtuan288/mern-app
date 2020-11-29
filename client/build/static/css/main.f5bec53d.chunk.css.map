@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack://src/App.css"],"names":[],"mappings":"AAAA,EACI,UAAW,CACX,wBACJ,CAEA,EACI,aACJ","file":"main.f5bec53d.chunk.css","sourcesContent":["* {\r\n    color: #eee;\r\n    background-color: #121212;\r\n}\r\n\r\na {\r\n    color: #809fff\r\n}"]}
